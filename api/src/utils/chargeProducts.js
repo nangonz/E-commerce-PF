@@ -3,8 +3,6 @@ const { Product, Category } = require('../db.js');
 
 
 const chargeProducts = async() =>{
-    const dataDB = await Category.findAll()
-    if(dataDB?.length<=0) return
     try {
         const categories = [{ category: "Laptops"}, { category: "Smartphones"},{ category:"Tablets"},{ category:"Smartwatches"}, { category: "Speakers"}, { category:"TV"}];
         const CategoryDB = categories.map(c=> Category.create(c));
